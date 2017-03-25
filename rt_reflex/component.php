@@ -26,9 +26,10 @@ $gantry->init();
 			<?php 
 				$gantry->displayHead();
 				$gantry->addStyles(array('template.css','joomla.css','typography.css'));
+                $gantry->addLess('global.less');
 			?>
 		</head>
-		<body>
+		<body class="component-body">
 			<div id="rt-main">
 				<div class="rt-container">
 					<div class="rt-block">
