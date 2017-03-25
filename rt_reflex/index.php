@@ -13,6 +13,8 @@
 defined( '_JEXEC' ) or die( 'Restricted index access' );
 /* Load Mootools */
 JHTML::_('behavior.framework', true);
+/* Load jQuery */
+JHtml::_('jquery.framework', true);
 // load and inititialize gantry class
 require_once('lib/gantry/gantry.php');
 $gantry->init();
@@ -32,6 +34,7 @@ function isBrowserCapable(){
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $gantry->language; ?>" lang="<?php echo $gantry->language;?>" >
 <head>
+	<script src="//assets.adobedtm.com/c876840ac68fc41c08a580a3fb1869c51ca83380/satelliteLib-0a468d1f187baaccf238a04e406eefb408f3ba8b.js"></script>
 	<?php 
 		$gantry->displayHead();
 		/* Force IE to most recent version */
@@ -161,6 +164,7 @@ function isBrowserCapable(){
 			<?php echo $gantry->displayModules('analytics','basic','basic'); ?>
 			<?php /** End Analytics **/ endif; ?>
 		</div>
+		<script type="text/javascript">_satellite.pageBottom();</script>
 	</body>
 </html>
 <?php
