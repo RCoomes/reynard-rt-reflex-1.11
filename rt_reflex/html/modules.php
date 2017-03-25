@@ -127,7 +127,15 @@ function modChrome_standard($module, &$params, &$attribs)
         <?php endif; ?>
             <div class="rt-block">
 				<?php if ($module->showtitle != 0) : ?>
-				<div class="module-title"><h2 class="title"><?php echo $module->title; ?></h2></div>
+
+                    <?php
+                    $title = $module->title;
+                    $title = explode(' ', $title);
+                    $title[0] = '<span>'.$title[0].'</span>';
+                    $title = join(' ', $title);
+                    ?>
+
+				<div class="module-title"><h2 class="title"><?php echo $title; ?></h2></div>
                 <?php endif; ?>
 				<div class="module-content">
                 	<?php echo $module->content; ?>
